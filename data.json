@@ -1,0 +1,338 @@
+{
+  "lastUpdated": "March 11, 2026",
+  "totals": {
+    "partners": 1287,
+    "customers": 5757,
+    "revenue": 22217130.35,
+    "commission": 3460234.24,
+    "clicks": 266877,
+    "active": 424
+  },
+  "activity": {
+    "active": 424,
+    "warm": 315,
+    "dormant": 548
+  },
+  "tiers": {
+    "t3": {
+      "count": 13,
+      "active": 13,
+      "warm": 0,
+      "dormant": 0,
+      "customers": 2234,
+      "revenue": 11718948.57
+    },
+    "t2": {
+      "count": 202,
+      "active": 83,
+      "warm": 26,
+      "dormant": 93,
+      "customers": 1786,
+      "revenue": 7278962.29
+    },
+    "t1": {
+      "count": 1072,
+      "active": 328,
+      "warm": 289,
+      "dormant": 455,
+      "customers": 1737,
+      "revenue": 3219219.49
+    }
+  },
+  "topCustomers": [
+    {
+      "name": "Bilal Malas",
+      "email": "bilal.malas@luxsalesconsulting.com",
+      "tier": "Tier 3",
+      "customers": 606,
+      "revenue": 273313.57,
+      "clicks": 1050
+    },
+    {
+      "name": "Stefan Graf",
+      "email": "stefan@heartbeat-consulting.com",
+      "tier": "Tier 3",
+      "customers": 470,
+      "revenue": 492896.85,
+      "clicks": 1730
+    },
+    {
+      "name": "Admin Semantic Labs",
+      "email": "admin+1@semanticlabs.com",
+      "tier": "Tier 2",
+      "customers": 396,
+      "revenue": 328400.8,
+      "clicks": 10030
+    },
+    {
+      "name": "Ricardo Ruppert",
+      "email": "rico_2806@hotmail.com",
+      "tier": "Tier 3",
+      "customers": 368,
+      "revenue": 1852660.37,
+      "clicks": 534
+    },
+    {
+      "name": "Muhammed Bagriacik",
+      "email": "mb@fesma.de",
+      "tier": "Tier 3",
+      "customers": 222,
+      "revenue": 2578031.29,
+      "clicks": 638
+    },
+    {
+      "name": "Millisa Nwokolo",
+      "email": "millisa@lacrownlogistics.com",
+      "tier": "Tier 1",
+      "customers": 162,
+      "revenue": 71166.51,
+      "clicks": 2603
+    },
+    {
+      "name": "Jayden Runyon",
+      "email": "hunter@keyglee.com",
+      "tier": "Tier 2",
+      "customers": 133,
+      "revenue": 1121311.49,
+      "clicks": 23
+    },
+    {
+      "name": "Mariah Williamson",
+      "email": "mariah@itsmariah.com",
+      "tier": "Tier 2",
+      "customers": 110,
+      "revenue": 551391.07,
+      "clicks": 3213
+    },
+    {
+      "name": "Julian Krieg",
+      "email": "info@juliankrieg.com",
+      "tier": "Tier 3",
+      "customers": 109,
+      "revenue": 625173.6,
+      "clicks": 452
+    },
+    {
+      "name": "Marcel M\u00fcller",
+      "email": "office@scalingsales.at",
+      "tier": "Tier 3",
+      "customers": 107,
+      "revenue": 29687.48,
+      "clicks": 148
+    },
+    {
+      "name": "Team xResults",
+      "email": "team@digitalxresults.de",
+      "tier": "Tier 2",
+      "customers": 102,
+      "revenue": 126258.27,
+      "clicks": 700
+    },
+    {
+      "name": "Admin Semantic Labs",
+      "email": "admin@semanticlabs.com",
+      "tier": "Tier 2",
+      "customers": 98,
+      "revenue": 285833.59,
+      "clicks": 2481
+    },
+    {
+      "name": "Justus Kraft",
+      "email": "jk@justus-kraft.de",
+      "tier": "Tier 3",
+      "customers": 92,
+      "revenue": 634730.77,
+      "clicks": 295
+    },
+    {
+      "name": "Anthony Cullen",
+      "email": "anthony@ignitionsystems.io",
+      "tier": "Tier 2",
+      "customers": 66,
+      "revenue": 61848.89,
+      "clicks": 186
+    },
+    {
+      "name": "Artem Kosarev",
+      "email": "artkosarev@gmail.com",
+      "tier": "Tier 1",
+      "customers": 63,
+      "revenue": 41640.85,
+      "clicks": 2758
+    },
+    {
+      "name": "Igor Shapiro",
+      "email": "igor.shapiro@ultb.io",
+      "tier": "Tier 1",
+      "customers": 63,
+      "revenue": 25992.76,
+      "clicks": 25
+    },
+    {
+      "name": "Christopher Meneses",
+      "email": "chris@crmgenius.ca",
+      "tier": "Tier 2",
+      "customers": 63,
+      "revenue": 433555.09,
+      "clicks": 266
+    },
+    {
+      "name": "James Sackl",
+      "email": "jsackl449@gmail.com",
+      "tier": "Tier 3",
+      "customers": 61,
+      "revenue": 1226610.15,
+      "clicks": 218
+    },
+    {
+      "name": "Nick Kozmin",
+      "email": "nick@salesprocess.io",
+      "tier": "Tier 3",
+      "customers": 61,
+      "revenue": 1040064.71,
+      "clicks": 83
+    },
+    {
+      "name": "Paris Picard",
+      "email": "paris@grooveconsulting.io",
+      "tier": "Tier 1",
+      "customers": 56,
+      "revenue": 97794.53,
+      "clicks": 10391
+    }
+  ],
+  "topRevenue": [
+    {
+      "name": "Muhammed Bagriacik",
+      "tier": "Tier 3",
+      "customers": 222,
+      "revenue": 2578031.29,
+      "clicks": 638
+    },
+    {
+      "name": "Ricardo Ruppert",
+      "tier": "Tier 3",
+      "customers": 368,
+      "revenue": 1852660.37,
+      "clicks": 534
+    },
+    {
+      "name": "Jason Arenstein",
+      "tier": "Tier 3",
+      "customers": 40,
+      "revenue": 1545369.22,
+      "clicks": 168
+    },
+    {
+      "name": "James Sackl",
+      "tier": "Tier 3",
+      "customers": 61,
+      "revenue": 1226610.15,
+      "clicks": 218
+    },
+    {
+      "name": "Jayden Runyon",
+      "tier": "Tier 2",
+      "customers": 133,
+      "revenue": 1121311.49,
+      "clicks": 23
+    },
+    {
+      "name": "Nick Kozmin",
+      "tier": "Tier 3",
+      "customers": 61,
+      "revenue": 1040064.71,
+      "clicks": 83
+    },
+    {
+      "name": "Justus Kraft",
+      "tier": "Tier 3",
+      "customers": 92,
+      "revenue": 634730.77,
+      "clicks": 295
+    },
+    {
+      "name": "Julian Krieg",
+      "tier": "Tier 3",
+      "customers": 109,
+      "revenue": 625173.6,
+      "clicks": 452
+    },
+    {
+      "name": "Mariah Williamson",
+      "tier": "Tier 2",
+      "customers": 110,
+      "revenue": 551391.07,
+      "clicks": 3213
+    },
+    {
+      "name": "Pedro Elpidio Ponciano Lima",
+      "tier": "Tier 3",
+      "customers": 49,
+      "revenue": 548625.59,
+      "clicks": 677
+    }
+  ],
+  "warmLeads": [
+    {
+      "name": "Sheni Salami",
+      "tier": "Tier 1",
+      "email": "sheni@icarusgrowth.com",
+      "clicks": 23767
+    },
+    {
+      "name": "Emanuele Chiericato",
+      "tier": "Tier 1",
+      "email": "emanuele.chiericato@gmail.com",
+      "clicks": 8265
+    },
+    {
+      "name": "Amir Reiter",
+      "tier": "Tier 1",
+      "email": "areiter@cloudtask.com",
+      "clicks": 8155
+    },
+    {
+      "name": "Arseniy Volosevich",
+      "tier": "Tier 1",
+      "email": "arseniy@ipqmedia.com",
+      "clicks": 2292
+    },
+    {
+      "name": "Sofia Kurd",
+      "tier": "Tier 1",
+      "email": "sofia@gtmadvising.com",
+      "clicks": 1989
+    },
+    {
+      "name": "Jesse Woodbury",
+      "tier": "Tier 1",
+      "email": "jesse@jessewoodbury.com",
+      "clicks": 1488
+    },
+    {
+      "name": "Justin Charnell",
+      "tier": "Tier 1",
+      "email": "jdcharnell@gmail.com",
+      "clicks": 1355
+    },
+    {
+      "name": "MACH4 Studios",
+      "tier": "Tier 1",
+      "email": "services@mach4studios.com",
+      "clicks": 1276
+    },
+    {
+      "name": "Kannan Kasi",
+      "tier": "Tier 1",
+      "email": "kannan@zignalytics.com",
+      "clicks": 1086
+    },
+    {
+      "name": "Evangel Oputa",
+      "tier": "Tier 1",
+      "email": "sme@beginefusion.com",
+      "clicks": 978
+    }
+  ]
+}
