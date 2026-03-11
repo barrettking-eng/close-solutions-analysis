@@ -150,7 +150,7 @@
     <span class="close-logo">CLOSE</span>
     <span class="header-title">Solutions Consultant Analysis</span>
   </div>
-  <span class="header-date">March 10, 2026 · 1,370 partners</span>
+  <span class="header-date" id="headerDate">March 10, 2026 · 1,370 partners</span>
 </div>
 
 <div class="main">
@@ -159,39 +159,39 @@
   <div class="kpi-grid">
     <div class="kpi-card" style="--c:#10b981">
       <div class="kpi-label">Total Partners</div>
-      <div class="kpi-value">1,370</div>
-      <div class="kpi-sub">99.8% approved</div>
+      <div class="kpi-value" id="kpi-partners">1,370</div>
+      <div class="kpi-sub" id="kpi-partners-sub">99.8% approved</div>
     </div>
     <div class="kpi-card" style="--c:#8b5cf6">
       <div class="kpi-label">Revenue Attributed</div>
-      <div class="kpi-value">$22.2M</div>
+      <div class="kpi-value" id="kpi-revenue">$22.2M</div>
       <div class="kpi-sub">All-time total</div>
     </div>
     <div class="kpi-card" style="--c:#3b82f6">
       <div class="kpi-label">Customers Generated</div>
-      <div class="kpi-value">5,796</div>
+      <div class="kpi-value" id="kpi-customers">5,796</div>
       <div class="kpi-sub">Via partner links</div>
     </div>
     <div class="kpi-card" style="--c:#f59e0b">
       <div class="kpi-label">Commission Paid</div>
-      <div class="kpi-value">$3.46M</div>
-      <div class="kpi-sub">15.6% of revenue</div>
+      <div class="kpi-value" id="kpi-commission">$3.46M</div>
+      <div class="kpi-sub" id="kpi-commission-sub">15.6% of revenue</div>
     </div>
     <div class="kpi-card" style="--c:#ef4444">
       <div class="kpi-label">Link Clicks</div>
-      <div class="kpi-value">295K</div>
-      <div class="kpi-sub">1.96% click-to-customer</div>
+      <div class="kpi-value" id="kpi-clicks">295K</div>
+      <div class="kpi-sub" id="kpi-clicks-sub">1.96% click-to-customer</div>
     </div>
     <div class="kpi-card" style="--c:#10b981">
       <div class="kpi-label">Active Partners</div>
-      <div class="kpi-value">439</div>
-      <div class="kpi-sub">32% activation rate</div>
+      <div class="kpi-value" id="kpi-active">439</div>
+      <div class="kpi-sub" id="kpi-active-sub">32% activation rate</div>
     </div>
   </div>
 
   <!-- TIER BREAKDOWN -->
   <div class="tier-banner">
-    <div class="tier-card" style="--tc:#10b981;--tbg:#ecfdf5">
+    <div class="tier-card" id="tier-card-t3" style="--tc:#10b981;--tbg:#ecfdf5">
       <div class="tier-card-header">
         <div class="tier-label">🏆 Tier 3 — Elite</div>
         <span class="tier-pct-badge">100% active</span>
@@ -204,7 +204,7 @@
       </div>
       <div class="tier-act-bar"><div class="tier-act-fill" style="width:100%"></div></div>
     </div>
-    <div class="tier-card" style="--tc:#3b82f6;--tbg:#eff6ff">
+    <div class="tier-card" id="tier-card-t2" style="--tc:#3b82f6;--tbg:#eff6ff">
       <div class="tier-card-header">
         <div class="tier-label">⚡ Tier 2 — Growth</div>
         <span class="tier-pct-badge">41% active</span>
@@ -217,7 +217,7 @@
       </div>
       <div class="tier-act-bar"><div class="tier-act-fill" style="width:41%"></div></div>
     </div>
-    <div class="tier-card" style="--tc:#94a3b8;--tbg:#f1f5f9">
+    <div class="tier-card" id="tier-card-t1" style="--tc:#94a3b8;--tbg:#f1f5f9">
       <div class="tier-card-header">
         <div class="tier-label">🌱 Tier 1 — Starter</div>
         <span class="tier-pct-badge">30% active</span>
@@ -789,12 +789,55 @@ function initCharts() {
 }
 
 // ═══════════════════════════════════════
-//  INIT
+//  INIT — loads data.json, falls back to hardcoded
 // ═══════════════════════════════════════
-renderCustomers(topCustomers);
-renderRevenue(topRevenue);
-renderWarm(warmLeads);
-initCharts();
+function applyData(d) {
+  const t = d.totals, ti = d.tiers;
+  document.getElementById('headerDate').textContent =
+    d.lastUpdated + ' · ' + t.partners.toLocaleString() + ' partners';
+  document.getElementById('kpi-partners').textContent     = t.partners.toLocaleString();
+  document.getElementById('kpi-partners-sub').textContent = ((t.partners - (t.partners * 0.002)) / t.partners * 100).toFixed(1) + '% approved';
+  document.getElementById('kpi-revenue').textContent      = '$' + (t.revenue/1e6).toFixed(1) + 'M';
+  document.getElementById('kpi-customers').textContent    = t.customers.toLocaleString();
+  document.getElementById('kpi-commission').textContent   = '$' + (t.commission/1e6).toFixed(2) + 'M';
+  document.getElementById('kpi-commission-sub').textContent = ((t.commission/t.revenue)*100).toFixed(1) + '% of revenue';
+  document.getElementById('kpi-clicks').textContent       = Math.round(t.clicks/1000) + 'K';
+  document.getElementById('kpi-clicks-sub').textContent   = ((t.customers/t.clicks)*100).toFixed(2) + '% click-to-customer';
+  document.getElementById('kpi-active').textContent       = t.active.toLocaleString();
+  document.getElementById('kpi-active-sub').textContent   = ((t.active/t.partners)*100).toFixed(0) + '% activation rate';
+  // Tier cards — rebuild innerHTML
+  const totalRev = t.revenue;
+  ['t3','t2','t1'].forEach(function(tk) {
+    const tier = ti[tk];
+    const card = document.getElementById('tier-card-' + tk);
+    if (!card) return;
+    const stats = card.querySelectorAll('.tier-stat-val');
+    if (stats.length >= 4) {
+      stats[0].textContent = tier.count.toLocaleString();
+      stats[1].textContent = '$' + (tier.revenue/1e6).toFixed(1) + 'M';
+      stats[2].textContent = tier.customers.toLocaleString();
+      stats[3].textContent = Math.round(tier.revenue/totalRev*100) + '%';
+    }
+    const fill = card.querySelector('.tier-act-fill');
+    if (fill) fill.style.width = Math.round(tier.active/tier.count*100) + '%';
+    const badge = card.querySelector('.tier-pct-badge');
+    if (badge) badge.textContent = Math.round(tier.active/tier.count*100) + '% active';
+  });
+  topCustomers.splice(0, Infinity, ...d.topCustomers);
+  topRevenue.splice(0, Infinity, ...d.topRevenue);
+  warmLeads.splice(0, Infinity, ...d.warmLeads);
+}
+
+(async function init() {
+  try {
+    const r = await fetch('./data.json?_=' + Date.now());
+    if (r.ok) applyData(await r.json());
+  } catch(e) { /* use hardcoded fallback */ }
+  renderCustomers(topCustomers);
+  renderRevenue(topRevenue);
+  renderWarm(warmLeads);
+  initCharts();
+})();
 </script>
 </body>
 </html>
